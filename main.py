@@ -17,6 +17,7 @@ from app.menus.bookmark import show_bookmark_menu
 from app.menus.account import show_account_menu
 from app.menus.package import fetch_my_packages, get_packages_by_family, show_package_details
 from app.menus.hot import show_hot_menu, show_hot_menu2
+from app.menus.family_codes import show_family_codes_menu
 from app.service.sentry import enter_sentry_mode
 from app.menus.purchase import purchase_by_family
 from app.menus.famplan import show_family_info
@@ -52,6 +53,7 @@ def show_main_menu(profile):
     print("12. Store Family List")
     print("13. Store Packages")
     print("14. Redemables")
+    print("15. Family Codes")
     print("R. Register")
     print("N. Notifikasi")
     print("V. Validate msisdn")
@@ -123,6 +125,8 @@ def main():
                 if family_code == "99":
                     continue
                 get_packages_by_family(family_code)
+            elif choice == "15":
+                show_family_codes_menu()
             elif choice == "7":
                 family_code = input("Enter family code (or '99' to cancel): ")
                 if family_code == "99":

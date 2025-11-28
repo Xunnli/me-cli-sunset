@@ -30,7 +30,7 @@ def clear_screen():
            \/____/                  \/____/         
 """
 
-    print(ascii_art)
+    #print(ascii_art)
 
 def pause():
     input("\nPress enter to continue...")

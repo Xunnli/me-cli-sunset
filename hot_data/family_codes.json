@@ -1,0 +1,37 @@
+[
+    {
+        "family_code": "a28ac010-2eaf-40f6-9641-30553cc54269",
+        "is_enterprise": false,
+        "name": "Social Media"
+    },
+    {
+        "family_code": "a28ac010-2eaf-40f6-9641-30553cc54269",
+        "is_enterprise": false,
+        "name": "Xtra Combo Flex"
+    },
+    {
+        "family_code": "19d01233-8b79-428a-ace3-5b3fcc4dc99e",
+        "is_enterprise": false,
+        "name": "Kuota Gaming"
+    },
+    {
+        "family_code": "6bcc96f4-f196-4e8f-969f-e45a121d21bd",
+        "is_enterprise": false,
+        "name": "Bundling"
+    }, 
+    {
+        "family_code": "23b71540-8785-4abe-816d-e9b4efa48f95",
+        "is_enterprise": false,
+        "name": "Xtra Combo Plus No 24 / 32"
+    }, 
+    {
+        "family_code": "7658c955-a0b9-405f-bb17-de7f43d1a946",
+        "is_enterprise": false,
+        "name": "Kuota Aplikasi Xtra Combo Plus 10GB 3rb"
+    }, 
+    {
+        "family_code": "ccb162e6-b7cf-4162-8e3f-662e67cbb4cb",
+        "is_enterprise": false,
+        "name": "48GB, Rp. 15K. Pilih No. 4 / 7, Pembayaran No. 7, Overwrite Rp. 15000"
+    }
+]
