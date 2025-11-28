@@ -24,33 +24,36 @@ class FamilyCodes:
             self._initialized = True
 
     def _save(self, data: List[Dict]):
+        for c in data:
+            c["is_enterprise"] = None
         with open(self.filepath, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=4)
 
     def load(self):
         with open(self.filepath, "r", encoding="utf-8") as f:
             self.codes = json.load(f)
+        for c in self.codes:
+            c["is_enterprise"] = None
 
     def save(self):
         self._save(self.codes)
 
-    def add(self, family_code: str, is_enterprise: bool = False, name: str = "") -> bool:
-        key = (family_code, is_enterprise)
-        if any((c["family_code"], c.get("is_enterprise", False)) == key for c in self.codes):
+    def add(self, family_code: str, name: str = "") -> bool:
+        if any(c["family_code"] == family_code for c in self.codes):
             print("Family code already exists.")
             return False
         self.codes.append({
             "family_code": family_code,
-            "is_enterprise": is_enterprise,
+            "is_enterprise": None,
             "name": name,
         })
         self.save()
         print("Family code added.")
         return True
 
-    def remove(self, family_code: str, is_enterprise: bool = False) -> bool:
+    def remove(self, family_code: str) -> bool:
         for i, c in enumerate(self.codes):
-            if c["family_code"] == family_code and c.get("is_enterprise", False) == is_enterprise:
+            if c["family_code"] == family_code:
                 del self.codes[i]
                 self.save()
                 print("Family code removed.")
@@ -59,6 +62,6 @@ class FamilyCodes:
         return False
 
     def list(self) -> List[Dict]:
-        return self.codes.copy()
+        return [{"family_code": c["family_code"], "is_enterprise": None, "name": c.get("name", "")} for c in self.codes]
 
 FamilyCodesInstance = FamilyCodes()
