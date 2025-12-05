@@ -48,9 +48,7 @@ def check_for_updates():
         return False
 
     if local != remote:
-        print(f"⚠️  A newer version is available (remote {remote[:7]} vs local {local[:7]}).")
-        print("   Run: git pull --rebase to update.")
-        return True
+        return False
     else:
         # Up to date
         return False
